@@ -1,0 +1,12 @@
+<h1>$member.getName()</h1
+
+<ul>
+  #foreach($team in $member.getTeams())
+   <li>$team.getName()</li>
+  #end
+</ul>
+
+
+<a href="/members/$member.getId()/teams/new">Add a new team</a>
+
+<a href="/members">All members</a>
