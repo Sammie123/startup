@@ -28,4 +28,18 @@ public class TeamTest {
     Team myTeam = new Team("Barbell");
     assertEquals(1, myTeam.getId());
   }
+
+  @Test
+  public void clear_clearTeams_0() {
+    Team myTeam = new Team("Barbell");
+    Team.clear();
+    assertEquals(0, Team.all().size());
+  }
+
+  @Test
+  public void find_returnsId_secondTeam() {
+    Team firstTeam = new Team("Barbell");
+    Team secondTeam = new Team("Brigade");
+    assertEquals(Team.find(secondTeam.getId()), secondTeam);
+  }
 }
