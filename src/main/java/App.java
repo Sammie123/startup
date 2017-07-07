@@ -89,11 +89,26 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("members/:id/teams/new", (request, response) -> {
+    get("/members/:id/teams/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Member member = Member.find(Integer.parseInt(request.params(":id")));
       model.put("member", member);
       model.put("template", "templates/member-teams-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/teams", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      Member member = Member.find(Integer.parseInt(request.queryParams("memberId")));
+
+      String name = request.queryParams("name");
+      Team newTeam = new Team(name);
+
+      member.addTeam(newTeam);
+
+      model.put("member", member);
+      model.put("template", "templates/member-teams-success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
