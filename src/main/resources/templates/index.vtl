@@ -1,20 +1,5 @@
-<h1>Startup Team Tracker</h1>
 
-#if ($teams)
-  <ul>
-    #foreach ($team in $teams)
-      <li>$team.getName()</li>
-    #end
-  </ul>
-#else
-  <p>No Team Name</p>
-#end
+<h1> Welcome to Team Tracker</h1>
 
-<p>Add a new Team:</p>
-
-<form action="/teams" method="post">
-  <label for="name">Team Name</label>
-  <input id="name" name="name" type="text">
-
-  <button type="submit" class="btn">Add Team</button>
-</form>
+<a href="/teams/new">Add a new Team</a>
+<a href="/teams">View all Teams</a>

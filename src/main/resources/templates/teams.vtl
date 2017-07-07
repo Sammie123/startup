@@ -1,0 +1,13 @@
+<h1>Startup Team Tracker</h1>
+
+#if ($teams)
+  <ul>
+    #foreach ($team in $teams)
+      <li>$team.getName()</li>
+    #end
+  </ul>
+#else
+  <p>No Team Name</p>
+#end
+
+<a href="/teams/new">Add new Team</a>
