@@ -7,4 +7,10 @@ public class TeamTest {
     Team myTeam = new Team("Barbell");
     assertEquals(true, myTeam instanceof Team);
   }
+
+  @Test
+  public void Team_teamName_String() {
+    Team myTeam = new Team("Barbell");
+    assertEquals("Barbell", myTeam.getName());
+  }
 }
