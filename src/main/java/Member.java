@@ -5,13 +5,13 @@ public class Member {
   private String mName;
   private static List<Member> instances = new ArrayList<Member>();
   private int mId;
-  private List<Team> mTeams;
+  // private List<Team> mTeams;
 
   public Member(String name) {
     mName = name;
     instances.add(this);
     mId = instances.size();
-    mTeams = new ArrayList<Team>();
+    // mTeams = new ArrayList<Team>();
   }
 
   public String getName() {
@@ -34,11 +34,11 @@ public class Member {
     return instances.get(id - 1);
   }
 
-  public List<Team> getTeams() {
-    return mTeams;
-  }
+  // public List<Team> getTeams() {
+  //   return mTeams;
+  // }
 
-  public void addTeam(Team team) {
-    mTeams.add(team);
-  }
+  // public void addTeam(Team team) {
+  //   mTeams.add(team);
+  // }
 }

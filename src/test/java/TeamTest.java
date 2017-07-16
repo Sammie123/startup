@@ -33,7 +33,7 @@ public class TeamTest {
   public void clear_clearTeams_0() {
     Team myTeam = new Team("Barbell");
     Team.clear();
-    assertEquals(0, Team.all().size());
+    assertEquals(Team.all().size(), 0);
   }
 
   @Test
@@ -41,5 +41,13 @@ public class TeamTest {
     Team firstTeam = new Team("Barbell");
     Team secondTeam = new Team("Brigade");
     assertEquals(Team.find(secondTeam.getId()), secondTeam);
+  }
+
+  @Test
+  public void getMember_addMemberToList_true() {
+    Team testTeam = new Team("Epicodus");
+    Member newMember = new Member("lincoln");
+    testTeam.addMember(newMember);
+    assertTrue(testTeam.getMembers().contains(newMember));
   }
 }
